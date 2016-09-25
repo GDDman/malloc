@@ -1,0 +1,95 @@
+
+In first-fit mode:
+
+allocating 20000 bytes...
+
+starting heap...
+Bytes Allocated: 20000
+Bytes Free: 5120
+Largest Free Space: 5120
+
+
+20000, 5120, 5120
+
+allocating 10000 bytes...
+Extending heap... before: 17125940   after: 17141080
+allocating 1000 bytes...
+allocating 44444 bytes...
+Extending heap... before: 17141080   after: 17190664
+
+
+Bytes Allocated: 75444
+Bytes Free: 14350
+Largest Free Space: 5120
+
+
+75444, 14350, 5120
+
+Removing b and c (10000 and 1000 bytes)...
+Bytes Allocated: 46194
+Bytes Free: 25380
+Largest Free Space: 20260
+
+
+46194, 25380, 20260
+
+Saving hello world to the 44444 byte memory, and printing the data from the pointer...
+hello world
+
+(Should say hello world)
+
+allocating 3000 bytes...
+
+Bytes Allocated: 49194
+Bytes Free: 22370
+Largest Free Space: 17250
+
+
+49194, 22370, 17250 (The +10 is from the middle allocation)
+
+freeing everything...
+
+Bytes Allocated: 0
+Bytes Free: 89854
+Largest Free Space: 89854
+
+
+0, 89854, 89854
+
+Testing if the best-fit works...
+Global policy set to 0.
+
+
+allocating 50000 bytes...
+
+allocating 50000 bytes...
+
+Extending heap... before: 17190664   after: 17245804
+Bytes Allocated: 100000
+Bytes Free: 44964
+Largest Free Space: 39844
+
+
+101000, 44964, 39844
+
+There should now be a large free space in the middle and a small free space in the end
+If we allocate 1000 bytes, then it should go at the end and the largest Free space should not change.
+
+allocating 1000 bytes...
+
+Bytes Allocated: 101000
+Bytes Free: 43954
+Largest Free Space: 39844
+
+
+101000, 43954, 39844
+
+The free bytes went down by 1000, but the largest free space did not. This is the desired behavior
+
+freeing everything...
+
+Bytes Allocated: 0
+Bytes Free: 144994
+Largest Free Space: 144994
+
+
